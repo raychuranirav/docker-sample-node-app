@@ -15,8 +15,7 @@ jobs:
           name: Install Dependencies
           command: npm install
 
-      # SonarCloud scan
-      - sonarcloud/scan
+     
 
       # Run tests
       - run:
@@ -33,7 +32,8 @@ jobs:
       # Store test results
       - store_test_results:
           path: ~/junit
-
+       # SonarCloud scan
+      - sonarcloud/scan
 orbs:
   sonarcloud: sonarsource/sonarcloud@2.0.0
 
