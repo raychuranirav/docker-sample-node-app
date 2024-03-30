@@ -18,6 +18,13 @@ jobs:
 
       # Run tests
       - run:
+          name: Run Tests
+          command: npm test
+
+          command: |
+            npm test
+            
+      - run:
           name: Run Junit test with sonar
           command: |
             npm install mocha --save-dev
