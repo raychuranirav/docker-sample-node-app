@@ -14,12 +14,12 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-
+      - sonarcloud/scan
       # Run tests
       - run:
           name: Run Tests
           command: npm test
-      - sonarcloud/scan
+      
 
       # Additional steps like linting, code coverage, etc., can be added here.
 
@@ -35,4 +35,3 @@ workflows:
 
 
 
-          
