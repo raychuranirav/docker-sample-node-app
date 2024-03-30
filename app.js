@@ -8,4 +8,6 @@ const server = http.createServer((req, res) => {
 server.listen(port, () => {
     console.log(`Server running on port ${port}/`);
 });
+
+// Intentional bug: Missing closing quote in the response string
 module.exports = server;
