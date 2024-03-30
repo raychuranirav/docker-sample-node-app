@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.162" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2024-03-30T14:00:05" tests="0" time="0.000" failures="0">
-  </testsuite>
-  <testsuite name="Server" timestamp="2024-03-30T14:00:05" tests="1" file="D:\cloudzenia node\docker-sample-nodeapp\test.js" time="0.153" failures="0">
-    <testcase name="Server responds with status 200" time="0.147" classname="responds with status 200">
-    </testcase>
-  </testsuite>
-</testsuites>
