@@ -22,10 +22,11 @@ jobs:
       - run:
           name: Run Tests
           command: |
+            npm install mocha --save-dev
             npm test
-            npm install -g mocha
+            
             mkdir ~/junit
-            mocha test --reporter mocha-junit-reporter --reporter-options mochaFile=~/junit/test-results.xml
+            ./node_modules/.bin/mocha test --reporter mocha-junit-reporter --reporter-options mochaFile=~/junit/test-results.xml
 
       # Store test results
       - store_test_results:
