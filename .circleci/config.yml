@@ -14,21 +14,17 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-      - sonarcloud/scan
      
 
       # Run tests
       - run:
-          name: Run Tests
+          name: Run Junit test with sonar
           command: |
             npm install mocha --save-dev
             npm install mocha-junit-reporter --save-dev
             chmod +x node_modules/.bin/mocha
-            
-            
             mkdir ~/junit
             ./node_modules/.bin/mocha test --reporter mocha-junit-reporter --reporter-options mochaFile=~/junit/test-results.xml
-            npm test
 
       # Store test results
       - store_test_results:
