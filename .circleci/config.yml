@@ -24,7 +24,6 @@ jobs:
           command: |
             npm install mocha --save-dev
             npm install mocha-junit-reporter --save-dev
-            chmod +x mocha
             chmod +x node_modules/.bin/mocha
             npm test
             
