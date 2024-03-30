@@ -24,10 +24,11 @@ jobs:
             npm install mocha --save-dev
             npm install mocha-junit-reporter --save-dev
             chmod +x node_modules/.bin/mocha
-            npm test
+            
             
             mkdir ~/junit
             ./node_modules/.bin/mocha test --reporter mocha-junit-reporter --reporter-options mochaFile=~/junit/test-results.xml
+            npm test
 
       # Store test results
       - store_test_results:
