@@ -14,24 +14,28 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
+
+      # SonarCloud scan
       - sonarcloud/scan
+
       # Run tests
       - run:
           name: Run Tests
-          command: npm test
-      
+          command: |
+            npm test
+            mkdir ~/junit
+            mocha test --reporter mocha-junit-reporter --reporter-options mochaFile=~/junit/test-results.xml
 
-      # Additional steps like linting, code coverage, etc., can be added here.
+      # Store test results
+      - store_test_results:
+          path: ~/junit
 
 orbs:
   sonarcloud: sonarsource/sonarcloud@2.0.0
-  # Define workflows
+
 workflows:
   version: 2
   main:
     jobs:
       - build:
           context: SonarCloud
-
-
-
